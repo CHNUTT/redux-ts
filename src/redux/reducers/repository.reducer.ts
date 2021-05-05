@@ -1,4 +1,8 @@
-import RepositoryTypes from './repository.types';
+import RepositoryActionTypes, {
+  SEARCH_REPOSITORIES_START,
+  SEARCH_REPOSITORIES_SUCCESS,
+  SEARCH_REPOSITORIES_FAILED,
+} from './repositoryActionTypes';
 
 interface RepositoriesState {
   loading: boolean;
@@ -6,23 +10,26 @@ interface RepositoriesState {
   data: string[];
 }
 
-const reducer = (state: RepositoriesState, action: any) => {
+const reducer = (
+  state: RepositoriesState,
+  action: RepositoryActionTypes
+): RepositoriesState => {
   switch (action.type) {
-    case RepositoryTypes.SEARCH_REPOSITORIES:
+    case SEARCH_REPOSITORIES_START:
       return {
         ...state,
         loading: true,
         error: null,
         data: [],
       };
-    case RepositoryTypes.SEARCH_REPOSITORIES_SUCCESS:
+    case SEARCH_REPOSITORIES_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
         data: action.payload,
       };
-    case RepositoryTypes.SEARCH_REPOSITORIES_FAIL:
+    case SEARCH_REPOSITORIES_FAILED:
       return {
         ...state,
         loading: false,
