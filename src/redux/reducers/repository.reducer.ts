@@ -1,8 +1,5 @@
-import RepositoryActionTypes, {
-  SEARCH_REPOSITORIES_START,
-  SEARCH_REPOSITORIES_SUCCESS,
-  SEARCH_REPOSITORIES_FAILED,
-} from './repositoryActionTypes';
+import RepositoryActionInterfaces from './repository.types';
+import RepositoryActionTypes from './repository.enum';
 
 interface RepositoriesState {
   loading: boolean;
@@ -12,24 +9,24 @@ interface RepositoriesState {
 
 const reducer = (
   state: RepositoriesState,
-  action: RepositoryActionTypes
+  action: RepositoryActionInterfaces
 ): RepositoriesState => {
   switch (action.type) {
-    case SEARCH_REPOSITORIES_START:
+    case RepositoryActionTypes.SEARCH_REPOSITORIES_START:
       return {
         ...state,
         loading: true,
         error: null,
         data: [],
       };
-    case SEARCH_REPOSITORIES_SUCCESS:
+    case RepositoryActionTypes.SEARCH_REPOSITORIES_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
         data: action.payload,
       };
-    case SEARCH_REPOSITORIES_FAILED:
+    case RepositoryActionTypes.SEARCH_REPOSITORIES_FAILED:
       return {
         ...state,
         loading: false,
