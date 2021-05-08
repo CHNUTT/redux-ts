@@ -1,5 +1,5 @@
-import Actions from '../actions';
-import ActionTypes from '../action-types';
+import { ActionInterfaces } from '../actions-interface';
+import { ActionTypes } from '../action-types';
 
 interface RepositoriesState {
   loading: boolean;
@@ -9,7 +9,7 @@ interface RepositoriesState {
 
 const reducer = (
   state: RepositoriesState,
-  action: Actions
+  action: ActionInterfaces
 ): RepositoriesState => {
   switch (action.type) {
     case ActionTypes.SEARCH_REPOSITORIES_START:

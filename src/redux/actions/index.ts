@@ -1,5 +1,7 @@
-import repositoryActions from './repository.actions';
+import RepositoryActions from './repository.actions';
 
-type Action = repositoryActions;
+const Actions = {
+  RepositoryActions
+}
 
-export default Action;
+export default Actions;
