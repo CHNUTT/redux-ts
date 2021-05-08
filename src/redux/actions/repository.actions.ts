@@ -10,7 +10,7 @@
 // export const SEARCH_REPOSITORIES_SUCCESS = 'SEARCH_REPOSITORIES_SUCCESS';
 // export const SEARCH_REPOSITORIES_FAILED = 'SEARCH_REPOSITORIES_FAILED';
 
-import repositoryActionNames from './repository.enum';
+import repositoryActionNames from '../action-types';
 
 interface SearchRepositoriesStartAction {
   type: repositoryActionNames.SEARCH_REPOSITORIES_START;
@@ -31,4 +31,4 @@ type RepositoryInterfaces =
   | SearchRepositoriesSuccessAction
   | SearchRepositoriesFailAction;
 
-export default RepositoryInterfaces
+export default RepositoryInterfaces;
